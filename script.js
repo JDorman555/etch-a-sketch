@@ -1,11 +1,21 @@
-let gridValue = prompt("Enter grid size");
+const btn = document.querySelector('button');
+const container = document.querySelector('.container');
+let gridValue = 16;
+
+btn.addEventListener('click', () => {
+  gridValue = prompt("Enter grid size");
+  removeGrid();
+  makeGrid(gridSize);
+})
+
 let gridSize = (760 / gridValue) - 2;
-console.log(gridSize);
+//console.log(gridSize);
 
 makeGrid(gridSize);
 
 function makeGrid(gridSize) {
-  const container = document.querySelector('.container');
+  gridSize = (760 / gridValue) - 2;
+  console.log(gridSize);
 
   for (let i = 0; i < gridValue; i++) {
     for (let h = 0; h < gridValue; h++) {
@@ -19,19 +29,10 @@ function makeGrid(gridSize) {
       container.appendChild(grid)
     }
   }
-
-
 }
 
-/*
-const gridBoxs = document.querySelector('.gridBox');
-//gridBoxs.addEventListener("mouseover" , (gridColor))
-
-gridBoxs.forEach((gridBox) => {
-  gridBox.addEventListener('mouseover', gridColor);
-})
-
-function gridColor() {
-  grid.style.backgroundColor = "black";
+function removeGrid() {
+  while (container.firstChild) {
+    container.removeChild(container.lastChild);
+  }
 }
-*/
