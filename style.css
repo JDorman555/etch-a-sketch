@@ -1,0 +1,12 @@
+body {
+  margin: 70px 0;
+  display: flex;
+  justify-content: center;
+
+}
+
+.container {
+  width: 760px;
+  height: 760px;
+  border: 2px solid black;
+}
