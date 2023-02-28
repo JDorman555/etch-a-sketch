@@ -7,6 +7,9 @@ body {
 
 .container {
   width: 760px;
-  height: 760px;
-  border: 2px solid black;
+  /*height: 760px;*/
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
