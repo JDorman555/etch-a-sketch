@@ -1,21 +1,18 @@
 const btn = document.querySelector('button');
 const container = document.querySelector('.container');
-let gridValue = 16;
 
 btn.addEventListener('click', () => {
-  gridValue = prompt("Enter grid size");
+  userPrompt();
   removeGrid();
   makeGrid(gridSize);
 })
 
+let gridValue = 16;
 let gridSize = (760 / gridValue) - 2;
-//console.log(gridSize);
-
 makeGrid(gridSize);
 
 function makeGrid(gridSize) {
   gridSize = (760 / gridValue) - 2;
-  console.log(gridSize);
 
   for (let i = 0; i < gridValue; i++) {
     for (let h = 0; h < gridValue; h++) {
@@ -34,5 +31,13 @@ function makeGrid(gridSize) {
 function removeGrid() {
   while (container.firstChild) {
     container.removeChild(container.lastChild);
+  }
+}
+
+function userPrompt() {
+  gridValue = prompt("Enter grid size (max of 100)");
+
+  if (gridValue > 100) {
+    userPrompt();
   }
 }
